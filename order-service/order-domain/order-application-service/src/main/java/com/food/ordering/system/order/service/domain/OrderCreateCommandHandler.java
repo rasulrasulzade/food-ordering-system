@@ -4,7 +4,7 @@ import com.food.ordering.system.order.service.domain.dto.create.CreateOrderComma
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.service.domain.mapper.OrderDataMapper;
-import com.food.ordering.system.order.service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentPublisher;
+import com.food.ordering.system.order.service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +14,11 @@ public class OrderCreateCommandHandler {
 
    private final OrderCreateHelper orderCreateHelper;
     private final OrderDataMapper orderDataMapper;
-    private final OrderCreatedPaymentPublisher paymentRequestMessagePublisher;
+    private final OrderCreatedPaymentRequestMessagePublisher paymentRequestMessagePublisher;
 
     public OrderCreateCommandHandler(OrderCreateHelper orderCreateHelper,
                                      OrderDataMapper orderDataMapper,
-                                     OrderCreatedPaymentPublisher paymentRequestMessagePublisher) {
+                                     OrderCreatedPaymentRequestMessagePublisher paymentRequestMessagePublisher) {
         this.orderCreateHelper = orderCreateHelper;
         this.orderDataMapper = orderDataMapper;
         this.paymentRequestMessagePublisher = paymentRequestMessagePublisher;
