@@ -5,7 +5,7 @@ import com.food.ordering.system.payment.service.domain.entity.CreditEntry;
 
 import java.util.Optional;
 
-public interface CreditEntityRepository {
+public interface CreditEntryRepository {
 
     CreditEntry save(CreditEntry creditEntry);
 
