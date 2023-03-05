@@ -26,9 +26,9 @@ DROP TABLE IF EXISTS "payment".credit_entry CASCADE;
 
 CREATE TABLE "payment".credit_entry
 (
-    id                  uuid NOT NULL,
-    customer_id         uuid NOT NULL,
-    total_credit_amount uuid NOT NULL,
+    id                  uuid           NOT NULL,
+    customer_id         uuid           NOT NULL,
+    total_credit_amount numeric(10, 2) NOT NULL,
     CONSTRAINT credit_entry_pkey PRIMARY KEY (id)
 );
 
