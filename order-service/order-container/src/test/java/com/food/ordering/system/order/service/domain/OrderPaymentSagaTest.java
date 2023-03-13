@@ -1,5 +1,6 @@
 package com.food.ordering.system.order.service.domain;
 
+
 import com.food.ordering.system.order.service.dataaccess.outbox.payment.entity.PaymentOutboxEntity;
 import com.food.ordering.system.order.service.dataaccess.outbox.payment.repository.PaymentOutboxJpaRepository;
 import com.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
@@ -28,6 +29,7 @@ import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.AFTER_TES
 @Sql(value = {"classpath:sql/OrderPaymentSagaTestSetUp.sql"})
 @Sql(value = {"classpath:sql/OrderPaymentSagaTestCleanUp.sql"}, executionPhase = AFTER_TEST_METHOD)
 public class OrderPaymentSagaTest {
+
     @Autowired
     private OrderPaymentSaga orderPaymentSaga;
 
@@ -113,4 +115,5 @@ public class OrderPaymentSagaTest {
                 .failureMessages(new ArrayList<>())
                 .build();
     }
+
 }
